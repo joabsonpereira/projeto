@@ -1,0 +1,146 @@
+@layout('layouts.main')
+@set('title', 'Agendamento')
+
+@section('content')
+<body>
+    <main style="font-family: 'Poppins', sans-serif">
+
+      <div class="jumbotron" style="background-color: honeydew; font-family: 'Poppins', sans-serif;">
+          <h1 class="display-4">Horários</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+      </div>
+
+      <div class="container">
+
+          <div class="row" style="padding-top: 16px;">
+              
+              <div class="col-lg-3  col-md-4">
+                  <h2>Planilha</h2>
+              </div>
+  
+              <div class="col-lg-3  col-md-4">
+
+              </div>
+              
+              <div class="col-lg-3  col-md-4">
+
+              </div>
+  
+              <div class="col-lg-3  col-md-4">
+                  <button class="btn btn-primary" style="background-color: rgb(15, 15, 15); width: 220px; margin-left: 5px; height: 40px;" onclick="openForm()"><h4>Adicionar</h4></button>
+
+              </div>
+              
+          </div>
+          
+      </div>
+      <div class="container">
+      <div class="form-popup" id="formulario">
+          <div class="col-sd-3">
+          <form class="form-container">
+            <h1>Horário</h1>
+        
+            <label for="email"><b>Data</b></label>
+            <input type="date" class="form-control datepicker" id="data"  required>
+            <label for="email" style="padding-top: 10px;"><b>Hora</b></label>
+            <input type="time" class="form-control datepicker" id="hora" style="margin-bottom: 16px;" required>
+
+
+            <button type="button" class="btn btn-primary" style="background-color: #04AA6D;" onclick="adicionar()">Adicionar</button>
+            <button type="button" class="btn btn-primary cancel" style="background-color: red;" onclick="closeForm()">Cancelar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+
+          <div class="row" style="padding-top: 16px;">
+              
+              <div class="col-lg-3  col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">Título do card 1</h5>
+                          <p class="card-text">Um texto qualquer pra esse cartão aqui qualquer.</p>
+                          <a href="#" class="btn btn-primary" id="botaocard">Vai pra algum lugar</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-lg-3  col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">Título do card 2</h5>
+                          <p class="card-text">Um texto qualquer pra esse cartão aqui qualquer.</p>
+                          <a href="#" class="btn btn-primary" id="botaocard">Vai pra algum lugar</a>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-lg-3  col-md-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title">Título do card 3</h5>
+                          <p class="card-text">Um texto qualquer pra esse cartão aqui qualquer.</p>
+                          <a href="#" class="btn btn-primary" id="botaocard">Vai pra algum lugar</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-lg-3  col-md-4">
+                  <div class="card cartao">
+                      <div class="card-body">
+                          <h5 class="card-title">Título do card 4</h5>
+                          <p class="card-text">Um texto qualquer pra esse cartão aqui qualquer.</p>
+                          <a href="#" class="btn btn-primary" id="botaocard">Vai pra algum lugar</a>
+                      </div>
+                  </div>
+              </div>
+
+            @each(item in horarios)
+                <div class="col-lg-3  col-md-4">
+                  <div class="card cartao">
+                      <div class="card-body">
+                          <h5 class="card-title">{{item.data}}</h5>
+                          <p class="card-text">Um texto qualquer pra esse cartão aqui qualquer.</p>
+                          @if(item.agendado)
+                          <a href="#" class="btn btn-primary" id="botaocard">Vai pra algum lugar</a> 
+                          @else
+                          <a href="#" class="btn btn-danger" id="botaocard">Reeee</a>
+                          @end
+                        
+                      </div>
+                  </div>
+              </div>
+            @endeach
+              
+          </div>
+          
+      </div>
+
+      <div class="container">
+
+          <div class="row" style="padding-top: 16px;" id="ID">
+              
+              
+          </div>
+          
+      </div>
+      
+
+    </main>
+       <div class="text-center p-3" style="background-color: rgba(0, 0, 0); color: #72e744;">
+          © 2021 Copyright:
+          <a class="text-white" href="https://www.instagram.com/_joabson_pereira/">Joabson Pereira</a>
+       </div>
+  
+    </footer>
+
+    @include('layouts/partials/scripts')
+
+    <script src="/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ </body>
+@endsection

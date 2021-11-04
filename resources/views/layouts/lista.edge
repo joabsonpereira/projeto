@@ -1,0 +1,49 @@
+@layout('layouts.main')
+@set('title', 'Perfil')
+
+@section('content')
+<body>
+    <main>
+
+        <div class="jumbotron" style="background-color: rgb(205, 231, 205); font-family: 'Poppins', sans-serif;">
+            <h1 class="display-4">Lista</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="row" style="padding-top: 16px; background-color: #181a18;  border-bottom: black; border-style: solid; border: 10px;">
+                
+                <div class="col-lg-3  col-md-4">
+                    <h2 style="color: whitesmoke; padding-bottom: 5px;font-family: 'Poppins', sans-serif;">Usuário</h2>
+                </div>
+    
+                
+                <div class="col-lg-3  col-md-4" style="color: white">
+                    @each(item in horarios)
+                    <p> {{ item.data }}</p>
+                    @endeach
+
+                </div>
+    
+                
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <div class="container" id="divtable" >
+
+      
+  </div>
+        
+
+      </main>
+
+
+    <script src="/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ </body>
+@endsection

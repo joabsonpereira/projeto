@@ -1,0 +1,28 @@
+
+@set('title', 'Nav')
+
+@section('nav')
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #72e744;">
+    <a class="navbar-brand " href="/inicio" style="font-family: 'Poppins', sans-serif;">Início</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/agendamento" style="font-family: 'Poppins', sans-serif;">Horários<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/lista" style="font-family: 'Poppins', sans-serif;">Notícias</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/profile" style="font-family: 'Poppins', sans-serif;">Perfil</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+@endsection

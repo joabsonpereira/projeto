@@ -1,0 +1,32 @@
+body:before {
+    content: '';
+    background: #181a18;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    position: absolute;
+}
+
+body {
+    background-color: #1d1d1dbc;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    color: #46444c;
+    position: relative;
+    padding-top: 10px;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+  .subtitle {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
